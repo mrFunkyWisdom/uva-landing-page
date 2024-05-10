@@ -11,7 +11,6 @@ import { DashboardTableOfContents } from "@/components/toc"
 import "@/styles/mdx.css"
 import { Metadata } from "next"
 
-import { env } from "@/env.mjs"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import {siteConfig} from "@/config/site";
