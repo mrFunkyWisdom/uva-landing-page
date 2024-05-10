@@ -14,6 +14,7 @@ import { Metadata } from "next"
 import { env } from "@/env.mjs"
 import { absoluteUrl, cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import {siteConfig} from "@/config/site";
 
 interface GuidePageProps {
   params: {
@@ -41,7 +42,7 @@ export async function generateMetadata({
     return {}
   }
 
-  const url = 'http://localhost:3000/'
+  const url = siteConfig.url
 
   const ogUrl = new URL(`${url}/api/og`)
   ogUrl.searchParams.set("heading", guide.title)

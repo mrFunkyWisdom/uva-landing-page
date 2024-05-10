@@ -36,7 +36,7 @@ export async function generateMetadata({
     return {}
   }
 
-  const url = 'http://localhost:3000/'
+  const url = siteConfig.url
 
   const ogUrl = new URL(`${url}/api/og`)
   ogUrl.searchParams.set("heading", page.title)

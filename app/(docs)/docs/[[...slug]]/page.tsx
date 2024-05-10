@@ -12,6 +12,7 @@ import { Metadata } from "next"
 
 import { env } from "@/env.mjs"
 import { absoluteUrl } from "@/lib/utils"
+import {siteConfig} from "@/config/site";
 
 interface DocPageProps {
   params: {
@@ -39,7 +40,7 @@ export async function generateMetadata({
     return {}
   }
 
-  const url = 'http://localhost:3000/'
+  const url = siteConfig.url
 
   const ogUrl = new URL(`${url}/api/og`)
   ogUrl.searchParams.set("heading", doc.description ?? doc.title)
