@@ -8,6 +8,9 @@ const nextConfig = {
     appDir: true,
     serverComponentsExternalPackages: ["@prisma/client"],
   },
+  publicRuntimeConfig: {
+    SITE_URL: process.env.SITE_URL
+  }
 }
 
 export default withContentlayer(nextConfig)
