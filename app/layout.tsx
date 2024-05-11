@@ -19,9 +19,12 @@ const fontHeading = localFont({
   variable: "--font-heading",
 })
 
+
 interface RootLayoutProps {
   children: React.ReactNode
 }
+
+const url =  process.env.NODE_ENV ? 'http://localhost:3000' : 'https://uva.me'
 
 export const metadata = {
   title: {
@@ -48,7 +51,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.url,
+    url: url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -57,7 +60,7 @@ export const metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
+    images: [`${url}/og.jpg`],
     creator: "@shadcn",
   },
   icons: {
@@ -65,7 +68,7 @@ export const metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
+  manifest: `${url}/site.webmanifest`,
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
